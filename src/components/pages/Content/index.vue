@@ -73,4 +73,4 @@
   </v-container>
 </template>
 
-<script src="./Home.js" />
+<script src="./Content.js" />

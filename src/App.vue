@@ -1,23 +1,26 @@
 <template>
   <v-app>
-    <Header />
     <v-content>
-      <Home />
+      <Header />
+      <Navigation />
+      <Content />
     </v-content>
   </v-app>
 </template>
 
 <script src="./Header.js" />
 <script>
-import Home from "./components/pages/Home/index.vue";
+import Content from "./components/pages/Content/index.vue";
 import Header from "./components/shared/Header/index.vue";
+import Navigation from "./components/shared/Navigation/index.vue";
 
 export default {
   name: "App",
 
   components: {
-    Home,
-    Header
+    Content,
+    Header,
+    Navigation
   },
 
   data: () => ({
@@ -25,3 +28,7 @@ export default {
   })
 };
 </script>
+
+<style lang="scss">
+@import "scss/globals.scss";
+</style>
