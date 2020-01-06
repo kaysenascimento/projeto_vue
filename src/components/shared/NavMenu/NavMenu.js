@@ -1,5 +1,5 @@
 export default {
-  name: "Navigation",
+  name: "NavMenu",
 
   data() {
     return {
@@ -8,6 +8,6 @@ export default {
         { title: "My Account", icon: "mdi-account" },
         { title: "Users", icon: "mdi-account-group-outline" }
       ]
-    }
+    };
   }
 };

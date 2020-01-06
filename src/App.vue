@@ -2,8 +2,11 @@
   <v-app>
     <v-content>
       <Header />
-      <Navigation />
-      <Content />
+
+      <main>
+        <NavMenu />
+        <Content />
+      </main>
     </v-content>
   </v-app>
 </template>
@@ -12,7 +15,7 @@
 <script>
 import Content from "./components/pages/Content/index.vue";
 import Header from "./components/shared/Header/index.vue";
-import Navigation from "./components/shared/Navigation/index.vue";
+import NavMenu from "./components/shared/NavMenu/index.vue";
 
 export default {
   name: "App",
@@ -20,7 +23,7 @@ export default {
   components: {
     Content,
     Header,
-    Navigation
+    NavMenu
   },
 
   data: () => ({
