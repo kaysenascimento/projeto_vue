@@ -1,33 +1,67 @@
 <template>
-  <v-app-bar class="header" elevate-on-scroll>
-    <div class="d-flex align-center">
-      <!-- <v-img
-        alt="Vuetify Logo"
-        class="shrink mr-2"
-        contain
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-        transition="scale-transition"
-        width="40"
-      />
+  <div class="header">
+    <v-app-bar elevate-on-scroll fixed>
+      <v-app-bar-nav-icon
+        class="menuMobile"
+        @click.stop="drawer = !drawer"
+      ></v-app-bar-nav-icon>
 
-      <v-img
-        alt="Vuetify Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-        width="100"
-      /> -->
-      <v-toolbar-title>Minhas notas</v-toolbar-title>
-    </div>
+      <v-navigation-drawer v-model="drawer" absolute temporary height="100vh">
+        <template>
+          <v-list-item one-line>
+            <v-list-item-avatar>
+              <img src="https://randomuser.me/api/portraits/women/81.jpg" />
+            </v-list-item-avatar>
 
-    <v-spacer></v-spacer>
+            <v-list-item-content>
+              <v-list-item-title>Jane Smith</v-list-item-title>
+              <v-list-item-subtitle>Logged In</v-list-item-subtitle>
+            </v-list-item-content>
+          </v-list-item>
+        </template>
 
-    <v-btn href="https://github.com/vuetifyjs/vuetify/releases/latest" target="_blank" text>
-      <span class="mr-2">Latest Release</span>
-      <v-icon>mdi-open-in-new</v-icon>
-    </v-btn>
-  </v-app-bar>
+        <v-divider></v-divider>
+
+        <v-list dense>
+          <v-list-item v-for="item in items" :key="item.title">
+            <v-list-item-icon>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-item-icon>
+
+            <v-list-item-content>
+              <v-list-item-title>{{ item.title }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list>
+      </v-navigation-drawer>
+
+      <v-toolbar-title>Page title</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-btn icon>
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
+
+      <v-menu left bottom>
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item v-for="n in 5" :key="n" @click="() => {}">
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+    </v-app-bar>
+  </div>
 </template>
 
 <script src="./Header.js" />
