@@ -4,9 +4,9 @@ export default {
   data() {
     return {
       items: [
-        { title: "Home", icon: "mdi-home-city" },
-        { title: "My Account", icon: "mdi-account" },
-        { title: "Users", icon: "mdi-account-group-outline" }
+        { title: "Adicionar", icon: "mdi-plus-circle" },
+        { title: "Lixeira", icon: "mdi-delete" },
+        { title: "Configuração", icon: "mdi-settings-outline" }
       ]
     };
   }
